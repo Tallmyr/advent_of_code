@@ -1,4 +1,4 @@
-def solution1(input, bits):
+def solution1(input: str, bits: int):
     with open(input + "/day3.txt", "r") as file:
         list1 = file.read().splitlines()
 
