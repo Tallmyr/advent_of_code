@@ -1,5 +1,5 @@
-def solution1():
-    with open("day1/list.txt", "r") as file:
+def solution1(input="inputs"):
+    with open(input + "/day1.txt", "r") as file:
         list1 = file.read().splitlines()
 
         increases = 0
@@ -11,8 +11,8 @@ def solution1():
         return increases
 
 
-def solution2():
-    with open("day1/list.txt", "r") as file:
+def solution2(input="inputs"):
+    with open(input + "/day1.txt", "r") as file:
         list1 = file.read().splitlines()
 
         increases = 0
@@ -28,6 +28,3 @@ def solution2():
                 print("Out of lines!")
 
         return increases
-
-
-print(solution2())

@@ -1,9 +1,9 @@
-def solution1():
-    with open("day3/input.txt", "r") as file:
+def solution1(input="inputs", bits=12):
+    with open(input + "/day3.txt", "r") as file:
         list1 = file.read().splitlines()
 
         binary_string = ""
-        for i in range(12):
+        for i in range(bits):
             zero, one = 0, 0
             for x in list1:
                 if x[i] == "1":
@@ -13,15 +13,18 @@ def solution1():
 
             binary_string += "1" if one > zero else "0"
 
+        mask = 31 if bits == 5 else 4095
+
         gamma = int(binary_string, base=2)
-        epsilon = gamma ^ 0b111111111111
+
+        epsilon = int(gamma ^ mask)
         result = gamma * epsilon
 
-        return f"Gamma = {gamma}, Epsilon = {epsilon}. Result = {result}"
+        return (gamma, epsilon, result)
 
 
-def solution2(input: str, bits: int):
-    with open("day3/" + input, "r") as file:
+def solution2(input="inputs"):
+    with open(input + "/day3.txt", "r") as file:
         oxygen = file.read().splitlines()
         co2 = oxygen
 
@@ -53,8 +56,7 @@ def solution2(input: str, bits: int):
 
             i += 1
 
-        result = int(oxygen[0], base=2) * int(co2[0], base=2)
-    return (oxygen[0], co2[0], result)
-
-
-print(solution2("input.txt", 12))
+        r_oxygen = int(oxygen[0], base=2)
+        r_co2 = int(co2[0], base=2)
+        result = r_oxygen * r_co2
+    return (r_oxygen, r_co2, result)
