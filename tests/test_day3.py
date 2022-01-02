@@ -6,4 +6,4 @@ def test_solution1():
 
 
 def test_solution2():
-    assert day3.solution2("test_inputs", 5) == (23, 10, 230)
+    assert day3.solution2("test_inputs") == (23, 10, 230)

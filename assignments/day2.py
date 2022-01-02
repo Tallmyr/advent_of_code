@@ -1,4 +1,4 @@
-def solution1(input):
+def solution1(input="inputs"):
     with open(input + "/day2.txt", "r") as file:
         list1 = file.read().splitlines()
 
@@ -20,7 +20,7 @@ def solution1(input):
         return (dist, depth, result)
 
 
-def solution2(input):
+def solution2(input="inputs"):
     with open(input + "/day2.txt", "r") as file:
         list1 = file.read().splitlines()
 

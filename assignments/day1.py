@@ -1,4 +1,4 @@
-def solution1(input):
+def solution1(input="inputs"):
     with open(input + "/day1.txt", "r") as file:
         list1 = file.read().splitlines()
 
@@ -11,7 +11,7 @@ def solution1(input):
         return increases
 
 
-def solution2(input):
+def solution2(input="inputs"):
     with open(input + "/day1.txt", "r") as file:
         list1 = file.read().splitlines()
 

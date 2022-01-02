@@ -1,4 +1,4 @@
-def solution1(input: str, bits: int):
+def solution1(input="inputs", bits=12):
     with open(input + "/day3.txt", "r") as file:
         list1 = file.read().splitlines()
 
@@ -23,7 +23,7 @@ def solution1(input: str, bits: int):
         return (gamma, epsilon, result)
 
 
-def solution2(input: str, bits: int):
+def solution2(input="inputs"):
     with open(input + "/day3.txt", "r") as file:
         oxygen = file.read().splitlines()
         co2 = oxygen
