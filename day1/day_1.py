@@ -7,8 +7,9 @@ def solution1():
         for i, x in enumerate(list1[1:]):
             if int(x) > int(list1[i]):
                 increases += 1
-        
-        return(increases)
+
+        return increases
+
 
 def solution2():
     with open("day1/list.txt", "r") as file:
@@ -18,15 +19,15 @@ def solution2():
 
         for i, x in enumerate(list1):
             try:
-                blocka = int(x) + int(list1[i+1]) + int(list1[i+2])
-                blockb = int(list1[i+1]) + int(list1[i+2]) + int(list1[i+3])
-                
+                blocka = int(x) + int(list1[i + 1]) + int(list1[i + 2])
+                blockb = int(list1[i + 1]) + int(list1[i + 2]) + int(list1[i + 3])
+
                 if blocka < blockb:
                     increases += 1
             except IndexError:
                 print("Out of lines!")
-        
-        return(increases)
+
+        return increases
 
 
 print(solution2())
