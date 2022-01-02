@@ -1,7 +1,21 @@
 def solution1():
     with open("day2/input.txt", "r") as file:
         list1 = file.read().splitlines()
-        print(list1)
+
+        dist, depth = 0, 0
+
+        for x in list1:
+            instruct, value = x.split(" ")
+            if instruct == "forward":
+                dist += int(value)
+            elif instruct == "down":
+                depth += int(value)
+            elif instruct == "up":
+                depth -= int(value)
+            else:
+                raise ValueError(f"Incorrect instruction. Instruction found was: {instruct}")
+
+        return f"Distance: {dist}, Depth: {depth}. Result: {dist * depth}"
 
 
-solution1()
+print(solution1())
